@@ -17,9 +17,9 @@ class ShaxsAPIView(generics.ListCreateAPIView):
     serializer_class = ShaxsSerializer
 
     def get_queryset(self):
-        tuman_id = self.kwargs['tuman_id']
-        return Shaxs.objects.filter(tuman_id=tuman_id)
+        maktab_id = self.kwargs['maktab_id']
+        return Shaxs.objects.filter(maktab_id=maktab_id)
 
     def perform_create(self, serializer):
-        tuman_id = self.kwargs['tuman_id']
-        serializer.save(tuman_id=tuman_id)
+        maktab_id = self.kwargs['maktab_id']
+        serializer.save(maktab_id=maktab_id)
