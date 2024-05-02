@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'whitenoise.runserver_nostatic',
+    "corsheaders",
+
     
 ]
 
@@ -61,6 +63,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+   "corsheaders.middleware.CorsMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,3 +146,10 @@ STATICFILES_DIRS = [
     str(BASE_DIR.joinpath('static')),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+CORS_ALLOWED_ORIGINS = [
+    "https://maxalla-api.onrender.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:8000",
+]
